@@ -1,6 +1,7 @@
 # NexScholar - Scholarship Management Platform
 
 A comprehensive scholarship management platform built with Next.js 15, Supabase, and TypeScript.
+To be deployed
 
 ## 🚀 Features
 

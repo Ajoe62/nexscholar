@@ -15,6 +15,7 @@ import { useAuth } from "@/contexts/AuthContext";
 
 const navigation = [
   { name: "Scholarships", href: "/scholarships" },
+  { name: "Events", href: "/events" },
   { name: "Consult", href: "/consult" },
   { name: "Submit Docs", href: "/documents" },
 ];
@@ -22,6 +23,7 @@ const navigation = [
 const authNavigation = [
   { name: "Dashboard", href: "/dashboard" },
   { name: "Scholarships", href: "/scholarships" },
+  { name: "Events", href: "/events" },
   { name: "Consult", href: "/consult" },
   { name: "Submit Docs", href: "/documents" },
 ];
@@ -139,6 +141,16 @@ export default function Header() {
                     Dashboard
                   </Link>
                   <Link
+                    href="/events/my-events"
+                    className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setUserMenuOpen(false)}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    My Events
+                  </Link>
+                  <Link
                     href="/profile"
                     className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={() => setUserMenuOpen(false)}
@@ -227,6 +239,13 @@ export default function Header() {
                           <p className="text-sm text-gray-500">{user.email}</p>
                         </div>
                       </div>
+                      <Link
+                        href="/events/my-events"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        My Events
+                      </Link>
                       <Link
                         href="/profile"
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"

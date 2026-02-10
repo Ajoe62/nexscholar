@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ChatWidget from "@/components/chat/ChatWidget";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Nexscholar - Global Scholarship Discovery Platform",
@@ -30,11 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body
-        className={`${inter.className} antialiased`}
-        suppressHydrationWarning
-      >
+    <html lang="en">
+      <body className="antialiased" suppressHydrationWarning>
         <AuthProvider>
           {children}
           <ChatWidget />
